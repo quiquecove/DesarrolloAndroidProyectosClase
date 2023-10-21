@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DatosCuriosos</string>
+    <string-array name="ArrayHechos">
+        <item>Mercurio es el planeta más cercano al Sol.</item>
+            <item>Tiene una órbita altamente elíptica alrededor del Sol.</item>
+            <item>Su superficie está cubierta de cráteres y tiene un aspecto desolado.</item>
+            <item>Mercurio no tiene una atmósfera significativa.</item>
+            <item>Las temperaturas en Mercurio varían drásticamente, desde extremadamente calientes hasta extremadamente frías.</item>
+            <item>Un día en Mercurio dura aproximadamente 59 días terrestres.</item>
+            <item>A pesar de su proximidad al Sol, Mercurio no es el planeta más caliente debido a su falta de atmósfera.</item>
+            <item>La sonda MESSENGER de la NASA fue la primera en orbitar Mercurio.</item>
+            <item>Mercurio tiene una gravedad mucho más débil que la Tierra.</item>
+            <item>El nombre Mercurio proviene del dios romano de los comerciantes y los viajeros.</item>
+        </string-array>
+    </resources>

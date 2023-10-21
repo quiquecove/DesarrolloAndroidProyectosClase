@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FunFacts</string>
+        <string-array name="ArrayHechos">
+            <item>Mercury is the closest planet to the Sun.</item>
+            <item>It has a highly elliptical orbit around the Sun.</item>
+            <item>Its surface is covered in craters and looks desolate.</item>
+            <item>Mercury lacks a significant atmosphere.</item>
+            <item>Temperatures on Mercury vary dramatically, from extremely hot to extremely cold.</item>
+            <item>A day on Mercury lasts approximately 59 Earth days.</item>
+            <item>Despite its proximity to the Sun, Mercury is not the hottest planet due to its lack of atmosphere.</item>
+            <item>NASA s MESSENGER probe was the first to orbit Mercury.</item>
+            <item>Mercury has much weaker gravity than Earth.</item>
+            <item>The name Mercury comes from the Roman god of merchants and travelers.</item>
+        </string-array>
+</resources>
