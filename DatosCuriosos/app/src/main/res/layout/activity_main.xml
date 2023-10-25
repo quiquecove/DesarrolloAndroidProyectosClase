@@ -89,4 +89,20 @@
         app:layout_constraintTop_toTopOf="@+id/btn3"
         app:layout_constraintVertical_bias="0.0" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="210dp"
+        android:text="Fun 0"
+        android:onClick="check"
+        app:layout_constraintBottom_toTopOf="@+id/dato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/btn4"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
