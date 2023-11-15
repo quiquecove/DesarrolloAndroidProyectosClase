@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <!-- Agregar tres CheckBoxes para el horario -->
+
     <CheckBox
         android:id="@+id/checkBoxDia"
         android:layout_width="wrap_content"
@@ -31,82 +32,55 @@
         app:layout_constraintStart_toEndOf="@+id/checkBoxTarde"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/etape"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxNoche"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxDia"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTarde" />
+
     <!-- Agregar un RadioGroup para el saludo -->
+
     <RadioGroup
         android:id="@+id/radioGroupSaludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/etape"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxDia">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
             android:id="@+id/radioButtonSr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:text="Sr." />
 
         <RadioButton
             android:id="@+id/radioButtonSrta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:text="Sra." />
 
         <RadioButton
             android:id="@+id/radioButtonNA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:text="N/A" />
 
     </RadioGroup>
-
-    <EditText
-        android:id="@+id/et"
-        android:layout_width="239dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="37dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Nombre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupSaludo"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/et2"
-        android:layout_width="240dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="37dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Apellido"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupSaludo"
-        app:layout_constraintVertical_bias="0.129" />
 
     <Button
         android:id="@+id/buttonSaludarCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Saludar con CheckBox"
         android:onClick="saludarConCheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Saludar con CheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSaludo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et2"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buttonSaludarStringBuilder"
@@ -114,9 +88,9 @@
         android:layout_height="wrap_content"
         android:text="Saludo Truman"
         android:onClick="saludarConTruman"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSaludarCheckBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSaludarCheckBox" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tv"
@@ -124,10 +98,10 @@
         android:layout_height="172dp"
         android:text="TextView"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSaludarStringBuilder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.34" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.salu2truman;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -18,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radioButtonSr;
     private RadioButton radioButtonSrta;
     private RadioButton radioButtonNA;
-    private EditText et;
     private EditText et2;
     private TextView tv;
 
@@ -34,9 +35,16 @@ public class MainActivity extends AppCompatActivity {
         radioButtonSr = findViewById(R.id.radioButtonSr);
         radioButtonSrta = findViewById(R.id.radioButtonSrta);
         radioButtonNA = findViewById(R.id.radioButtonNA);
-        et = findViewById(R.id.et);
-        et2 = findViewById(R.id.et2);
+        et2 = findViewById(R.id.etape);
         tv = findViewById(R.id.tv);
+
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("ape")) {
+            String apell = intent.getStringExtra("ape");
+            et2.setText(String.valueOf(apell));
+        } else {
+            Toast.makeText(this, "Debe proporcionar un apellido", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void saludarConCheckBox(View view) {
@@ -53,25 +61,37 @@ public class MainActivity extends AppCompatActivity {
         if (checkBoxNoche.isChecked()) {
             saludo.append("Buenas noches, ");
         }
+
         int selectedRadioButtonId = radioGroupSaludo.getCheckedRadioButtonId();
         RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
-        String nombre = et.getText().toString();
         String apellido = et2.getText().toString();
 
         if (selectedRadioButton == radioButtonSr) {
-            saludo.append("Sr. " + nombre + " " + apellido);
+            saludo.append("Sr." + apellido);
         } else if (selectedRadioButton == radioButtonSrta) {
-            saludo.append("Srta. " + nombre + " " + apellido);
+            saludo.append("Srta. " + apellido);
         } else if (selectedRadioButton == radioButtonNA) {
-            saludo.append("" + nombre + " " + apellido);
+            saludo.append("" + apellido);
         }
 
         tv.setText(saludo.toString());
         tv.setVisibility(View.VISIBLE);
+
+        Intent data = new Intent();
+        data.putExtra("saludo", String.valueOf(saludo));
+        setResult(RESULT_OK, data);
+        finish();
     }
 
+
     public void saludarConTruman(View view) {
-        StringBuilder saludo = new StringBuilder("Y por si no nos vemos luego: ¡Buenos días, buenas tardes y buenas noches!");
+        String apellido = et2.getText().toString();
+        StringBuilder saludo = new StringBuilder("Y por si no nos vemos luego: ¡Buenos días, buenas tardes y buenas noches! "+apellido);
+
+        Intent data = new Intent();
+        data.putExtra("saludo", String.valueOf(saludo));
+        setResult(RESULT_OK, data);
+        finish();
         tv.setText(saludo.toString());
         tv.setVisibility(View.VISIBLE);
     }

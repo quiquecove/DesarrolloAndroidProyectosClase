@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity2">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,25 +21,12 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre" />
+            android:text="Nombre Partido" />
 
         <EditText
-            android:id="@+id/editTextNombre"
+            android:id="@+id/etnombrepartido"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:ems="10"
-            android:inputType="text" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Edad" />
-
-        <EditText
-            android:id="@+id/editTextEdad"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
             android:ems="10"
             android:inputType="text" />
 
@@ -49,10 +34,23 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estudios" />
+            android:text="Presidente" />
 
         <EditText
-            android:id="@+id/editTextEstudios"
+            android:id="@+id/etpresidente"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escaños" />
+
+        <EditText
+            android:id="@+id/etescannos"
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:ems="10"
@@ -64,15 +62,15 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00E676"
             android:onClick="guardarPolitico"
-            android:text="Agregar Líder" />
+            android:text="Agregar Partido" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#2979FF"
-            android:onClick="consultarPolitico"
-            android:text="Consultar Líder" />
+            android:onClick="consultarPartido"
+            android:text="Consultar Partido" />
 
         <Button
             android:id="@+id/button3"
@@ -88,7 +86,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FF3D00"
             android:onClick="borrarPolitico"
-            android:text="Borrar Líder"
+            android:text="Borrar Partido"
             android:textColorLink="#1DE9B6" />
 
     </LinearLayout>
@@ -101,8 +99,8 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Modificar Lista Partidos"
-            android:onClick="modificarPartidos"
+            android:text="Volver"
+            android:onClick="volver"
             />
     </FrameLayout>
 

@@ -15,11 +15,20 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE LIDERESPOLITICOS ("
+        // Create the first table
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS PARTIDOSPOLITICOS ("
                 + "NOMBRE TEXT PRIMARY KEY, "
                 + "EDAD INT, "
                 + "ESTUDIOS TEXT)");
+
+        // Create the second table with a foreign key constraint
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS OTRA_TABLA ("
+                + "NOMBRE_PARTIDO TEXT PRIMARY KEY, "
+                + "POLITICO TEXT, "
+                + "ESCANNOS INT, "
+                + "FOREIGN KEY (POLITICO) REFERENCES PARTIDOSPOLITICOS(NOMBRE))");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {

@@ -2,6 +2,7 @@ package com.example.candidatospoliticos;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             tNombre.setText(fila.getString(fila.getColumnIndex("NOMBRE")));
             tEdad.setText(fila.getString(fila.getColumnIndex("EDAD")));
             tEstudios.setText(fila.getString(fila.getColumnIndex("ESTUDIOS")));
-            Toast.makeText(this, "Encontrado: " + fila.getString(1), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Encontrado: " + fila.getString(0), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "No se ha encontrado al líder político " + tNombre.getText().toString(), Toast.LENGTH_SHORT).show();
         }
@@ -91,5 +92,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No se ha encontrado al líder político " + tNombre.getText().toString(), Toast.LENGTH_SHORT).show();
         }
         bd.close();
+    }
+    public void modificarPartidos(View view){
+        Intent i = new Intent(this, MainActivity2.class);
+        startActivity(i);
     }
 }
