@@ -1,0 +1,16 @@
+<resources>
+    <string-array name="clases_dnd_array">
+        <item>Bardo</item>
+        <item>Bárbaro</item>
+        <item>Brujo</item>
+        <item>Clérigo</item>
+        <item>Druida</item>
+        <item>Explorador</item>
+        <item>Guerrero</item>
+        <item>Hechicero</item>
+        <item>Mago</item>
+        <item>Monje</item>
+        <item>Paladín</item>
+        <item>Pícaro</item>
+    </string-array>
+</resources>

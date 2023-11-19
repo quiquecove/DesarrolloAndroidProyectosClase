@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Habilidades">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".Habilidades">
+
+        <!-- Habilidad: Atletismo -->
+        <CheckBox
+            android:id="@+id/checkBoxAtletismo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atletismo" />
+
+        <!-- Habilidad: Acrobacias -->
+
+        <!-- Habilidad: Juego de Manos -->
+
+        <CheckBox
+            android:id="@+id/checkBoxAcrobacias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acrobacias" />
+
+        <CheckBox
+            android:id="@+id/checkBoxJuegoDeManos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juego de Manos" />
+
+        <!-- Habilidad: Sigilo -->
+        <CheckBox
+            android:id="@+id/checkBoxSigilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sigilo" />
+
+        <!-- Habilidad: Arcano -->
+        <CheckBox
+            android:id="@+id/checkBoxArcano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arcano" />
+
+        <!-- Habilidad: Historia -->
+        <CheckBox
+            android:id="@+id/checkBoxHistoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia" />
+
+        <!-- Habilidad: Investigación -->
+        <CheckBox
+            android:id="@+id/checkBoxInvestigacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Investigación" />
+
+        <!-- Habilidad: Naturaleza -->
+        <CheckBox
+            android:id="@+id/checkBoxNaturaleza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Naturaleza" />
+
+        <!-- Habilidad: Religión -->
+        <CheckBox
+            android:id="@+id/checkBoxReligion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Religión" />
+
+        <!-- Habilidad: Medicina -->
+        <CheckBox
+            android:id="@+id/checkBoxMedicina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicina" />
+
+        <!-- Habilidad: Percepción -->
+        <CheckBox
+            android:id="@+id/checkBoxPercepcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percepción" />
+
+        <!-- Habilidad: Perspicacia -->
+        <CheckBox
+            android:id="@+id/checkBoxPerspicacia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perspicacia" />
+
+        <!-- Habilidad: Supervivencia -->
+        <CheckBox
+            android:id="@+id/checkBoxSupervivencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supervivencia" />
+
+        <!-- Habilidad: Trato de animales -->
+        <CheckBox
+            android:id="@+id/checkBoxTratoDeAnimales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trato de animales" />
+
+        <!-- Habilidad: Engaño -->
+        <CheckBox
+            android:id="@+id/checkBoxEngano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engaño" />
+
+        <!-- Habilidad: Intimidación -->
+        <CheckBox
+            android:id="@+id/checkBoxIntimidacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intimidación" />
+
+        <!-- Habilidad: Interpretación -->
+        <CheckBox
+            android:id="@+id/checkBoxInterpretacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interpretación" />
+
+        <!-- Habilidad: Persuasión -->
+        <CheckBox
+            android:id="@+id/checkBoxPersuasion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Persuasión"
+          />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

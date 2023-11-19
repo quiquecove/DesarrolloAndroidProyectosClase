@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:ignore="ExtraText">
-    tools:context=".MainActivity3">
+    tools:context=".Habilidades">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,10 +24,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinFuerza"
+            android:id="@+id/NFuerza"
             android:layout_width="124dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -36,7 +37,7 @@
             android:id="@+id/btnFuerza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarFuerza"
             android:text="Generar" />
     </LinearLayout>
 
@@ -55,10 +56,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinDestreza"
+            android:id="@+id/NDestreza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -67,7 +69,7 @@
             android:id="@+id/btnDestreza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarDestreza"
             android:text="Generar" />
     </LinearLayout>
 
@@ -86,10 +88,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinConstitucion"
+            android:id="@+id/NConstitucion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -98,7 +101,7 @@
             android:id="@+id/btnConstitucion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarConstitucion"
             android:text="Generar" />
     </LinearLayout>
 
@@ -118,10 +121,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinInteligencia"
+            android:id="@+id/NInteligencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -130,7 +134,7 @@
             android:id="@+id/btnInteligencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarInteligencia"
             android:text="Generar" />
     </LinearLayout>
 
@@ -149,10 +153,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinSabiduria"
+            android:id="@+id/NSabiduria"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp"
@@ -162,7 +167,7 @@
             android:id="@+id/btnSabiduria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarSabiduria"
             android:text="Generar" />
     </LinearLayout>
 
@@ -181,10 +186,11 @@
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/NumerinCarisma"
+            android:id="@+id/NCarisma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:editable="false"
             android:ems="10"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -193,7 +199,7 @@
             android:id="@+id/btnCarisma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarPuntuacion"
+            android:onClick="generarCarisma"
             android:text="Generar" />
     </LinearLayout>
 

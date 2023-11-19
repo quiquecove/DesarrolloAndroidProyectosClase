@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyectoFinalAndroidEv1</string>
+    <string-array name="clases_dnd_array" />
 </resources>
