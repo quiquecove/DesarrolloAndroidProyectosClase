@@ -19,7 +19,7 @@ public class Estadisticas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_habilidades);
+        setContentView(R.layout.activity_estadisticas);
 
         fuerza = findViewById(R.id.NFuerza);
         destreza = findViewById(R.id.NDestreza);

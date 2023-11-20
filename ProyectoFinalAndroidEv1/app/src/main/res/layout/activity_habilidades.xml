@@ -1,206 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#696969"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:ignore="ExtraText">
     tools:context=".Habilidades">
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".Habilidades">
 
-        <TextView
-            android:layout_width="183dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Fuerza: "
-            android:textColor="#E6E1E1"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NFuerza"
-            android:layout_width="124dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btnFuerza"
+        <!-- Habilidad: Atletismo -->
+        <CheckBox
+            android:id="@+id/checkBoxAtletismo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarFuerza"
-            android:text="Generar" />
+            android:text="Atletismo" />
+
+        <!-- Habilidad: Acrobacias -->
+
+        <!-- Habilidad: Juego de Manos -->
+
+        <CheckBox
+            android:id="@+id/checkBoxAcrobacias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acrobacias" />
+
+        <CheckBox
+            android:id="@+id/checkBoxJuegoDeManos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juego de Manos" />
+
+        <!-- Habilidad: Sigilo -->
+        <CheckBox
+            android:id="@+id/checkBoxSigilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sigilo" />
+
+        <!-- Habilidad: Arcano -->
+        <CheckBox
+            android:id="@+id/checkBoxArcano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arcano" />
+
+        <!-- Habilidad: Historia -->
+        <CheckBox
+            android:id="@+id/checkBoxHistoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia" />
+
+        <!-- Habilidad: Investigación -->
+        <CheckBox
+            android:id="@+id/checkBoxInvestigacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Investigación" />
+
+        <!-- Habilidad: Naturaleza -->
+        <CheckBox
+            android:id="@+id/checkBoxNaturaleza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Naturaleza" />
+
+        <!-- Habilidad: Religión -->
+        <CheckBox
+            android:id="@+id/checkBoxReligion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Religión" />
+
+        <!-- Habilidad: Medicina -->
+        <CheckBox
+            android:id="@+id/checkBoxMedicina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicina" />
+
+        <!-- Habilidad: Percepción -->
+        <CheckBox
+            android:id="@+id/checkBoxPercepcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percepción" />
+
+        <!-- Habilidad: Perspicacia -->
+        <CheckBox
+            android:id="@+id/checkBoxPerspicacia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perspicacia" />
+
+        <!-- Habilidad: Supervivencia -->
+        <CheckBox
+            android:id="@+id/checkBoxSupervivencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supervivencia" />
+
+        <!-- Habilidad: Trato de animales -->
+        <CheckBox
+            android:id="@+id/checkBoxTratoDeAnimales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trato de animales" />
+
+        <!-- Habilidad: Engaño -->
+        <CheckBox
+            android:id="@+id/checkBoxEngano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Engaño" />
+
+        <!-- Habilidad: Intimidación -->
+        <CheckBox
+            android:id="@+id/checkBoxIntimidacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intimidación" />
+
+        <!-- Habilidad: Interpretación -->
+        <CheckBox
+            android:id="@+id/checkBoxInterpretacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interpretación" />
+
+        <!-- Habilidad: Persuasión -->
+        <CheckBox
+            android:id="@+id/checkBoxPersuasion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Persuasión"
+          />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="184dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Destreza: "
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NDestreza"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btnDestreza"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="generarDestreza"
-            android:text="Generar" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Constitucion: "
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NConstitucion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btnConstitucion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="generarConstitucion"
-            android:text="Generar" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Inteligencia: "
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NInteligencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btnInteligencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="generarInteligencia"
-            android:text="Generar" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="181dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Sabiduria: "
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NSabiduria"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-        <Button
-            android:id="@+id/btnSabiduria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="generarSabiduria"
-            android:text="Generar" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="179dp"
-            android:layout_height="wrap_content"
-            android:foregroundTint="#101010"
-            android:text="Carisma: "
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/NCarisma"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <Button
-            android:id="@+id/btnCarisma"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="generarCarisma"
-            android:text="Generar" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,9 +54,13 @@ public class MenuCreacion extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("nombrej")) {
             nombreJugador = String.valueOf(intent.getStringExtra("nombrej"));
-            Toast.makeText(this, "Nombre Jugador: " + nombreJugador, Toast.LENGTH_SHORT).show();
+            if(!nombreJugador.isEmpty()){
+
+                Toast.makeText(this, "Nombre Jugador: " + nombreJugador, Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, "Debe proporcionar un nombre", Toast.LENGTH_SHORT).show();
+            finish();
         }
 
         spinner = findViewById(R.id.spinner);

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class Habilidades extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_estadisticas);
+        setContentView(R.layout.activity_habilidades);
 
         // Inicialización de CheckBox
         checkBoxAtletismo = findViewById(R.id.checkBoxAtletismo);
