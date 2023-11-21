@@ -27,7 +27,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etnombre = findViewById(R.id.etnombre);
         crearPers = findViewById(R.id.btncrear);
-        crearPers.setEnabled(false);
         gestor = new AdminSQLiteOpenHelper(this, "PERSONAJESDND", null, 1);
 
     }
@@ -51,20 +50,17 @@ public class Login extends AppCompatActivity {
                         }
                     });
 
-    public void activarBotonCrear(View view) {
 
-        if (etnombre.getText().toString().isEmpty()) {
-            crearPers.setEnabled(false);
-        } else {
-            crearPers.setEnabled(true);
-        }
-    }
 
     public void crearPersonaje(View view) {
+        if(etnombre.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Introduzca un nombre.", Toast.LENGTH_LONG).show();
+
+        }else{
         Intent i = new Intent(this, MenuCreacion.class);
         i.putExtra("nombrej", String.valueOf(etnombre.getText()));
         startForResult.launch(i);
-    }
+    }}
 
     public void verLista(View view) {
         Intent i = new Intent(this, ListaPersonajes.class);

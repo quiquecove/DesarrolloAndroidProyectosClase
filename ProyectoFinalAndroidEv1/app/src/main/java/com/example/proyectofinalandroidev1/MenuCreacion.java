@@ -54,13 +54,6 @@ public class MenuCreacion extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("nombrej")) {
             nombreJugador = String.valueOf(intent.getStringExtra("nombrej"));
-            if(!nombreJugador.isEmpty()){
-
-                Toast.makeText(this, "Nombre Jugador: " + nombreJugador, Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(this, "Debe proporcionar un nombre", Toast.LENGTH_SHORT).show();
-            finish();
         }
 
         spinner = findViewById(R.id.spinner);
@@ -188,7 +181,7 @@ public class MenuCreacion extends AppCompatActivity {
         registro.put("HABILIDADES", habilidadesGuardadas);
         bd.insert("PERSONAJESDND", null, registro);
         Intent resultIntent = new Intent();
-        resultIntent.putExtra("saludo", "Mensaje de saludo");
+        resultIntent.putExtra("saludo", "Pesonaje Guardado");
         setResult(RESULT_OK, resultIntent);
         finish();
     }
