@@ -23,7 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MenuCreacion extends AppCompatActivity {
-    EditText etnombrepersonaje;
+    EditText etnp;
     Spinner spinner;
     String nombreJugador;
     String nombrePersonaje;
@@ -50,7 +50,7 @@ public class MenuCreacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         gestor = new AdminSQLiteOpenHelper(this, "PERSONAJESDND", null, 1);
-        etnombrepersonaje = findViewById(R.id.etnombrepersonaje);
+        etnp = findViewById(R.id.etnombrepersonaje);
         Intent intent = getIntent();
         if (intent != null && intent.hasExtra("nombrej")) {
             nombreJugador = String.valueOf(intent.getStringExtra("nombrej"));
@@ -102,7 +102,8 @@ public class MenuCreacion extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), res, Toast.LENGTH_LONG).show();
                                 estadisticas.setEnabled(false);
                                 estadisticas.setActivated(false);
-                                if (!habilidades.isActivated() && !estadisticas.isActivated() && etnombrepersonaje != null) {
+                                estadisticas.setVisibility(View.GONE);
+                                if (!habilidades.isActivated() && !estadisticas.isActivated()) {
                                     guardar.setEnabled(true);
                                 }
                             } else {
@@ -128,7 +129,8 @@ public class MenuCreacion extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), res, Toast.LENGTH_LONG).show();
                                 habilidades.setEnabled(false);
                                 habilidades.setActivated(false);
-                                if (!habilidades.isActivated() && !estadisticas.isActivated() && etnombrepersonaje != null) {
+                                habilidades.setVisibility(View.GONE);
+                                if (!habilidades.isActivated() && !estadisticas.isActivated()) {
                                     guardar.setEnabled(true);
                                 }
                             } else {
@@ -165,24 +167,28 @@ public class MenuCreacion extends AppCompatActivity {
     }
 
     public void guardarPersonaje(View view) {
-        nombrePersonaje = etnombrepersonaje.getText().toString();
-        SQLiteDatabase bd = gestor.getWritableDatabase();
-        ContentValues registro = new ContentValues();
-        registro.put("NOMBREJUGADOR", String.valueOf(nombreJugador));
-        registro.put("NOMBREPERSONAJE", nombrePersonaje);
-        String claseSeleccionada = spinner.getSelectedItem().toString();
-        registro.put("CLASE", claseSeleccionada);
-        registro.put("FUERZA", iNumero1);
-        registro.put("DESTREZA", iNumero2);
-        registro.put("CONSTITUCION", iNumero3);
-        registro.put("INTELIGENCIA", iNumero4);
-        registro.put("SABIDURIA", iNumero5);
-        registro.put("CARISMA", iNumero6);
-        registro.put("HABILIDADES", habilidadesGuardadas);
-        bd.insert("PERSONAJESDND", null, registro);
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra("saludo", "Pesonaje Guardado");
-        setResult(RESULT_OK, resultIntent);
-        finish();
+        if(etnp.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Introduce un nombre de personaje", Toast.LENGTH_LONG).show();
+        }else {
+            nombrePersonaje = etnp.getText().toString();
+            SQLiteDatabase bd = gestor.getWritableDatabase();
+            ContentValues registro = new ContentValues();
+            registro.put("NOMBREJUGADOR", String.valueOf(nombreJugador));
+            registro.put("NOMBREPERSONAJE", nombrePersonaje);
+            String claseSeleccionada = spinner.getSelectedItem().toString();
+            registro.put("CLASE", claseSeleccionada);
+            registro.put("FUERZA", iNumero1);
+            registro.put("DESTREZA", iNumero2);
+            registro.put("CONSTITUCION", iNumero3);
+            registro.put("INTELIGENCIA", iNumero4);
+            registro.put("SABIDURIA", iNumero5);
+            registro.put("CARISMA", iNumero6);
+            registro.put("HABILIDADES", habilidadesGuardadas);
+            bd.insert("PERSONAJESDND", null, registro);
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("saludo", "Pesonaje Guardado");
+            setResult(RESULT_OK, resultIntent);
+            finish();
+        }
     }
 }

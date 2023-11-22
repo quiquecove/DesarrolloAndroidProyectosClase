@@ -17,7 +17,7 @@ public class Habilidades extends AppCompatActivity {
             checkBoxEngano, checkBoxIntimidacion, checkBoxInterpretacion, checkBoxPersuasion;
 
     int contadorCheckBoxesSeleccionadas = 0;
-    int maxCheckBoxes = 3;
+    final int  maxCheckBoxes = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +70,12 @@ public class Habilidades extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    if (contadorCheckBoxesSeleccionadas < maxCheckBoxes) {
+                    if (contadorCheckBoxesSeleccionadas <=3) {
                         contadorCheckBoxesSeleccionadas++;
-                    } else {
-                        checkBox.setChecked(false);
-                        devolver();
-                        // Puedes mostrar un mensaje aquí indicando que ya se han seleccionado 3 habilidades.
+                        if(contadorCheckBoxesSeleccionadas==3){
+                            //checkBox.setChecked(false);
+                            devolver();
+                        }
                     }
                 } else {
                     contadorCheckBoxesSeleccionadas--;
@@ -118,6 +118,8 @@ public class Habilidades extends AppCompatActivity {
 
 
     private void agregarHabilidadSeleccionada(CheckBox checkBox, ArrayList<String> habilidadesSeleccionadas, String habilidad) {
+
+
         if (checkBox.isChecked()) {
             habilidadesSeleccionadas.add(habilidad);
         }
@@ -129,11 +131,14 @@ public class Habilidades extends AppCompatActivity {
         for (String habilidad : habilidadesSeleccionadas) {
             habilidadesConcatenadas.append(habilidad).append(", ");
         }
-        // Crear el intent y devolver la cadena de habilidades seleccionadas
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra("habilidadesSeleccionadas", habilidadesConcatenadas.toString());
-        setResult(RESULT_OK, resultIntent);
-        finish();
+
+
+            // Crear el intent y devolver la cadena de habilidades seleccionadas
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("habilidadesSeleccionadas", habilidadesConcatenadas.toString());
+            setResult(RESULT_OK, resultIntent);
+            finish();
+
     }
 
 
