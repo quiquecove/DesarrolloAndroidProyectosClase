@@ -5,11 +5,16 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -20,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MenuCreacion extends AppCompatActivity {
@@ -41,6 +47,10 @@ public class MenuCreacion extends AppCompatActivity {
     private int iNumero5;
     private int iNumero6;
 
+    List<Integer> imagenes = new LinkedList<>();
+    List<String> clasesDnd = new ArrayList<>();
+
+
     // Variables para estadísticas y habilidades
     private String estadisticasGuardadas;
     private String habilidadesGuardadas;
@@ -56,8 +66,24 @@ public class MenuCreacion extends AppCompatActivity {
             nombreJugador = String.valueOf(intent.getStringExtra("nombrej"));
         }
 
+        iconosAdapter adaptadorIconos = new iconosAdapter();
+
+//Lista imagenes
+        imagenes.add(R.drawable.icono1);
+        imagenes.add(R.drawable.icono2);
+        imagenes.add(R.drawable.icono3);
+        imagenes.add(R.drawable.icono4);
+        imagenes.add(R.drawable.icono5);
+        imagenes.add(R.drawable.icono6);
+        imagenes.add(R.drawable.icono7);
+        imagenes.add(R.drawable.icono8);
+        imagenes.add(R.drawable.icono9);
+        imagenes.add(R.drawable.icono10);
+        imagenes.add(R.drawable.icono11);
+        imagenes.add(R.drawable.icono12);
+        //spinner
         spinner = findViewById(R.id.spinner);
-        List<String> clasesDnd = new ArrayList<>();
+        //lista para el spinner
         clasesDnd.add("Bardo");
         clasesDnd.add("Bárbaro");
         clasesDnd.add("Brujo");
@@ -81,7 +107,8 @@ public class MenuCreacion extends AppCompatActivity {
         );
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        //spinner.setAdapter(adapter);
+        spinner.setAdapter(adaptadorIconos);
         estadisticas = findViewById(R.id.Estadisticas);
         habilidades = findViewById(R.id.Habilidades);
         guardar = findViewById(R.id.Guardar_Personaje);
@@ -167,9 +194,9 @@ public class MenuCreacion extends AppCompatActivity {
     }
 
     public void guardarPersonaje(View view) {
-        if(etnp.getText().toString().isEmpty()){
+        if (etnp.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Introduce un nombre de personaje", Toast.LENGTH_LONG).show();
-        }else {
+        } else {
             nombrePersonaje = etnp.getText().toString();
             SQLiteDatabase bd = gestor.getWritableDatabase();
             ContentValues registro = new ContentValues();
@@ -189,6 +216,35 @@ public class MenuCreacion extends AppCompatActivity {
             resultIntent.putExtra("saludo", "Pesonaje Guardado");
             setResult(RESULT_OK, resultIntent);
             finish();
+        }
+    }
+
+    class iconosAdapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return imagenes.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return imagenes.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            LayoutInflater inflater=LayoutInflater.from(MenuCreacion.this);
+            convertView=inflater.inflate(R.layout.itemspinner,null);
+            ImageView iv1=convertView.findViewById(R.id.imageView);
+            TextView tv1=convertView.findViewById(R.id.tvClase);
+            iv1.setImageResource(imagenes.get(position));
+            tv1.setText(clasesDnd.get(position));
+            return convertView;
         }
     }
 }
