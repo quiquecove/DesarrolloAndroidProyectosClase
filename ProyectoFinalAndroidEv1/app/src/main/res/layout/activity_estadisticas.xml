@@ -15,13 +15,31 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+
         <TextView
-            android:layout_width="183dp"
+            android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Fuerza: "
             android:textColor="#E6E1E1"
             android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/d1F"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2F"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3F"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NFuerza"
@@ -36,23 +54,41 @@
             android:id="@+id/btnFuerza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarFuerza"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="184dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Destreza: "
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/d1D"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2D"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3D"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NDestreza"
@@ -67,7 +103,7 @@
             android:id="@+id/btnDestreza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarDestreza"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
@@ -78,12 +114,29 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="185dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Constitucion: "
             android:textColor="@color/white"
             android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/d1C"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2C"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3C"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NConstitucion"
@@ -98,7 +151,7 @@
             android:id="@+id/btnConstitucion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarConstitucion"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
@@ -110,12 +163,29 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="186dp"
+            android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Inteligencia: "
             android:textColor="@color/white"
             android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/d1I"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2I"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3I"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NInteligencia"
@@ -130,7 +200,7 @@
             android:id="@+id/btnInteligencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarInteligencia"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
@@ -141,12 +211,29 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="181dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Sabiduria: "
             android:textColor="@color/white"
             android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/d1S"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2S"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3S"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NSabiduria"
@@ -162,7 +249,7 @@
             android:id="@+id/btnSabiduria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarSabiduria"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
@@ -173,12 +260,29 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="179dp"
+            android:layout_width="89dp"
             android:layout_height="wrap_content"
             android:foregroundTint="#101010"
             android:text="Carisma: "
             android:textColor="@color/white"
             android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/d1CAR"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d2CAR"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
+
+        <ImageView
+            android:id="@+id/d3CAR"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/dado0" />
 
         <EditText
             android:id="@+id/NCarisma"
@@ -193,7 +297,7 @@
             android:id="@+id/btnCarisma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="generarCarisma"
+            android:onClick="generarAtributo"
             android:text="Generar" />
     </LinearLayout>
 
