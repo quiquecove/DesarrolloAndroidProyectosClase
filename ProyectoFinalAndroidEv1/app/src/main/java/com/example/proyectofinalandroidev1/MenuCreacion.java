@@ -38,6 +38,7 @@ public class MenuCreacion extends AppCompatActivity {
     Button estadisticas;
     Button habilidades;
     Button guardar;
+    String spinnerSel;
 
     // Variables para habilidades
     private int iNumero1;
@@ -202,8 +203,12 @@ public class MenuCreacion extends AppCompatActivity {
             ContentValues registro = new ContentValues();
             registro.put("NOMBREJUGADOR", String.valueOf(nombreJugador));
             registro.put("NOMBREPERSONAJE", nombrePersonaje);
-            String claseSeleccionada = spinner.getSelectedItem().toString();
-            registro.put("CLASE", claseSeleccionada);
+            //String claseSeleccionada = spinner.getSelectedItem().toString();
+            //registro.put("CLASE", claseSeleccionada);
+
+            //String claseSeleccionada = spinner.getSelectedItem().toString();
+            registro.put("CLASE", spinnerSel);
+            
             registro.put("FUERZA", iNumero1);
             registro.put("DESTREZA", iNumero2);
             registro.put("CONSTITUCION", iNumero3);
@@ -244,6 +249,7 @@ public class MenuCreacion extends AppCompatActivity {
             TextView tv1=convertView.findViewById(R.id.tvClase);
             iv1.setImageResource(imagenes.get(position));
             tv1.setText(clasesDnd.get(position));
+            spinnerSel= clasesDnd.get(position);
             return convertView;
         }
     }
