@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,12 +16,11 @@ import java.util.Random;
 public class Estadisticas extends AppCompatActivity {
 
     private TextView fuerza, destreza, constitucion, inteligencia, sabiduria, carisma;
-    private List<Integer> dados = new ArrayList<>();
     private Map<Button, List<ImageView>> buttonDiceMap = new HashMap<>();
     private Map<Button, TextView> buttonTextViewMap = new HashMap<>();
     private int contador = 0;
-    private int dado1, dado2, dado3;
     private Button button, btnFuerza, btnDestreza, btnConstitucion, btnInteligencia, btnSabiduria, btnCarisma;
+    private List<Integer> dados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +48,15 @@ public class Estadisticas extends AppCompatActivity {
         buttonTextViewMap.put(btnSabiduria, sabiduria);
         buttonTextViewMap.put(btnCarisma, carisma);
 
-        // Inicializa las listas de ImageView para cada botón
-        List<ImageView> dadosFuerza = new ArrayList<>();
-        dadosFuerza.add(findViewById(R.id.imageViewDado1F));
-        dadosFuerza.add(findViewById(R.id.imageViewDado2F));
-        dadosFuerza.add(findViewById(R.id.imageViewDado3F));
-        buttonDiceMap.put(btnFuerza, dadosFuerza);
+        // Asociar botones con listas de ImageView
+        buttonDiceMap.put(btnFuerza, asociarDados(R.id.d1F, R.id.d2F, R.id.d3F));
+        buttonDiceMap.put(btnDestreza, asociarDados(R.id.d1D, R.id.d2D, R.id.d3D));
+        buttonDiceMap.put(btnConstitucion, asociarDados(R.id.d1C, R.id.d2C, R.id.d3C));
+        buttonDiceMap.put(btnInteligencia, asociarDados(R.id.d1I, R.id.d2I, R.id.d3I));
+        buttonDiceMap.put(btnSabiduria, asociarDados(R.id.d1S, R.id.d2S, R.id.d3S));
+        buttonDiceMap.put(btnCarisma, asociarDados(R.id.d1CAR, R.id.d2CAR, R.id.d3CAR));
 
-        // Repite este bloque para los otros botones y sus respectivas ImageView
-        // ...
-
-        dados.add(R.drawable.dado0);
+        // Inicializar dados con los recursos de las imágenes
         dados.add(R.drawable.dado1);
         dados.add(R.drawable.dado2);
         dados.add(R.drawable.dado3);
@@ -67,38 +65,47 @@ public class Estadisticas extends AppCompatActivity {
         dados.add(R.drawable.dado6);
     }
 
+    private List<ImageView> asociarDados(int id1, int id2, int id3) {
+        List<ImageView> dados = new ArrayList<>();
+        dados.add(findViewById(id1));
+        dados.add(findViewById(id2));
+        dados.add(findViewById(id3));
+        return dados;
+    }
+
     public void generarAtributo(View view) {
         button = (Button) view;
         TextView textView = buttonTextViewMap.get(button);
 
-        int valorAtributo = lanzarDados(button);
+        // Generar 3 números aleatorios entre 1 y 6
+        List<Integer> valoresDados = lanzarDados(button);
 
         // Actualiza las ImageView con los valores de los dados asociados al botón
         List<ImageView> dadosImageView = buttonDiceMap.get(button);
+
         for (int i = 0; i < dadosImageView.size(); i++) {
-            dadosImageView.get(i).setImageResource(dados.get(i));
+            int resourceId = dados.get(valoresDados.get(i) - 1); // Restar 1 porque los índices comienzan en 0
+            dadosImageView.get(i).setImageResource(resourceId);
         }
 
-        textView.setText(String.valueOf(valorAtributo));
+        int sumaDados = valoresDados.stream().mapToInt(Integer::intValue).sum();
+        textView.setText(String.valueOf(sumaDados));
         button.setEnabled(false);
 
         contador++;
         checkFinalizar();
     }
 
-    private int lanzarDados(Button button) {
-        List<ImageView> dadosImageView = buttonDiceMap.get(button);
-
+    private List<Integer> lanzarDados(Button button) {
+        List<Integer> valoresDados = new ArrayList<>();
         Random random = new Random();
-        int sumaDados = 0;
 
-        for (int i = 0; i < dadosImageView.size(); i++) {
+        for (int i = 0; i < 3; i++) {
             int valorDado = random.nextInt(6) + 1;
-            dados.set(i, valorDado);
-            sumaDados += valorDado;
+            valoresDados.add(valorDado);
         }
 
-        return sumaDados;
+        return valoresDados;
     }
 
     private void checkFinalizar() {
@@ -112,6 +119,40 @@ public class Estadisticas extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
