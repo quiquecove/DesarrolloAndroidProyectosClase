@@ -135,7 +135,7 @@ public class Habilidades extends AppCompatActivity {
 
             // Crear el intent y devolver la cadena de habilidades seleccionadas
             Intent resultIntent = new Intent();
-            resultIntent.putExtra("habilidadesSeleccionadas", habilidadesConcatenadas.toString());
+            resultIntent.putExtra("habilidadesSeleccionadas", habilidadesConcatenadas.toString().substring(0,habilidadesConcatenadas.length()-2));
             setResult(RESULT_OK, resultIntent);
             finish();
 
