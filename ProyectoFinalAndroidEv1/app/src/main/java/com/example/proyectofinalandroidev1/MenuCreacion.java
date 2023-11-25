@@ -85,21 +85,21 @@ public class MenuCreacion extends AppCompatActivity {
         //spinner
         spinner = findViewById(R.id.spinner);
         //lista para el spinner
-        clasesDnd.add("Bardo");
         clasesDnd.add("Bárbaro");
-        clasesDnd.add("Brujo");
+        clasesDnd.add("Bardo");
         clasesDnd.add("Clérigo");
         clasesDnd.add("Druida");
-        clasesDnd.add("Explorador");
         clasesDnd.add("Guerrero");
-        clasesDnd.add("Hechicero");
-        clasesDnd.add("Mago");
         clasesDnd.add("Monje");
         clasesDnd.add("Paladín");
+        clasesDnd.add("Explorador");
         clasesDnd.add("Pícaro");
+        clasesDnd.add("Hechicero");
+        clasesDnd.add("Brujo");
+        clasesDnd.add("Mago");
 
         // Ordenar alfabéticamente
-        Collections.sort(clasesDnd);
+        //Collections.sort(clasesDnd);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
@@ -208,7 +208,6 @@ public class MenuCreacion extends AppCompatActivity {
 
             //String claseSeleccionada = spinner.getSelectedItem().toString();
             registro.put("CLASE", spinnerSel);
-            
             registro.put("FUERZA", iNumero1);
             registro.put("DESTREZA", iNumero2);
             registro.put("CONSTITUCION", iNumero3);
