@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences pref;
     EditText et1;
     EditText et2;
+    EditText et3;
     String dato1;
     String dato2;
 
@@ -20,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         et1 = findViewById(R.id.et1);
         et2 = findViewById(R.id.et2);
+        et3=findViewById(R.id.archivo);
+
     }
 
     public void guardar(View view) {
-        pref = getSharedPreferences("x", MODE_PRIVATE);
+        pref = getSharedPreferences(et3.getText().toString(), MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
 
         // Use a unique identifier for each set of data
@@ -40,13 +44,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void consultar(View view) {
-    SharedPreferences  pref = getSharedPreferences("x", MODE_PRIVATE);
+    SharedPreferences  pref = getSharedPreferences(et3.getText().toString(), MODE_PRIVATE);
 
         // You need to know the unique key associated with the data you want to retrieve
         String uniqueKey = et1.getText().toString();
 
         // Use the unique key to retrieve the data
-        String valor = pref.getString(uniqueKey ,"");
-        et2.setText(valor);
+        String valor = pref.getString(uniqueKey ,"I am error");
+        if(!valor.isEmpty()) {
+            et2.setText(valor);
+        }else if(valor.equals("I am error")){
+            //et2.setText("I am error");
+
+            Toast.makeText(getApplicationContext(), "Pelicula no encontrada ", Toast.LENGTH_SHORT).show();
+        }
     }
 }

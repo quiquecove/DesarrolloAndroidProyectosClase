@@ -20,13 +20,21 @@
             android:text="Hello World!" />
 
         <EditText
+            android:id="@+id/archivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Archivo"
+            android:inputType="text" />
+
+        <EditText
             android:id="@+id/et1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:ems="10"
-            android:inputType="text"
-            android:text="Id" />
+            android:hint="Id"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/et2"
@@ -34,8 +42,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="41dp"
             android:ems="10"
-            android:inputType="text"
-            android:text="N" />
+            android:hint="Nombre"
+            android:inputType="text" />
 
         <Button
             android:id="@+id/btnGuardar"
@@ -52,6 +60,7 @@
             android:text="Consultar"
             android:onClick="consultar"
             />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
