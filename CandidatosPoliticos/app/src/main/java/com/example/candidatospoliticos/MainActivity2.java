@@ -70,7 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     @SuppressLint("Range")
     public void consultarPartido(View view) {
-        SQLiteDatabase bd = gestor.getWritableDatabase();
+        SQLiteDatabase bd = gestor.getReadableDatabase();
         String[] aux = {tnombre_partido.getText().toString()};
         Cursor fila = bd.query("PARTIDOSPOLITICOS", null, "NOMBRE_PARTIDO=?", aux, null, null, null);
         if (fila.moveToFirst()) {
