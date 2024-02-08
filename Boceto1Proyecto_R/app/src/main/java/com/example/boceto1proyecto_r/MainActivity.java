@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.rv);
 
         // Crea una instancia del adaptador
-        AdaptadorRecycler adaptador = new AdaptadorRecycler(this);
+        AdaptadorRecycler2 adaptador = new AdaptadorRecycler2(this);
 
         // Configura el RecyclerView con un LinearLayoutManager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

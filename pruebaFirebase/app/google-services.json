@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "886484079043",
+    "project_id": "kawasaki-be2d0",
+    "storage_bucket": "kawasaki-be2d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886484079043:android:974b9912f7ac78c1a7ed76",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1nau7fvwnwTmNJf_XCFP8R7LidYEN37c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

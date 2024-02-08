@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:paddingBottom="5dp">
 
     <LinearLayout
         android:layout_width="399dp"
@@ -15,13 +18,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="149dp"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="153dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginRight="5dp"
             android:layout_weight="0"
             android:foregroundGravity="top|left"
+            android:padding="5dp"
             app:srcCompat="@drawable/persona1" />
 
         <LinearLayout
@@ -103,8 +107,8 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_width="197dp"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
