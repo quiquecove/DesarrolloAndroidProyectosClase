@@ -18,11 +18,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseReference ref;
+
     EditText nombre;
     TextView tv;
-    //private FirebaseAuth miFirebaseAuth;
-    DatabaseReference mDatabaseReference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +30,18 @@ public class MainActivity extends AppCompatActivity {
         nombre = findViewById(R.id.etnombre);
         tv = findViewById(R.id.tv);
         //miFirebaseAuth = FirebaseAuth.getInstance();
-        FirebaseApp.initializeApp(this);
-
 
 
     }
 
-    public void insertar(View view){
+    public void insertar(View view) {
 //necesito insertar el nombre en la base de datos junto a un child llamado nombre
 
         FirebaseDatabase.getInstance().getReference().child("nombre").setValue(nombre.getText().toString());
         tv.setText("Se ha insertado el nombre en la base de datos");
 
 
-
     }
-
 
 
 }
