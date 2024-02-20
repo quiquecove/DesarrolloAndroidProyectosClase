@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
@@ -21,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -31,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase db;
     EditText nombre, apellido, edad, hobbies;
     Switch adulto;
+    DatabaseReference raiz;
+    ChildEventListener bartChildEventListener;
 
 
     @Override
@@ -44,9 +44,38 @@ public class MainActivity extends AppCompatActivity {
         hobbies = findViewById(R.id.hobbies);
         adulto = findViewById(R.id.adulto);
 
+        raiz = db.getReference();
+        bartChildEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                String nuevoPersonaje = dataSnapshot.getKey();
+                if (!nuevoPersonaje.equalsIgnoreCase("Milhouse")) {
+                    insertarMilhouseAmigoOcupa(nuevoPersonaje);
+                }
+            }
 
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-        }
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+        raiz.addChildEventListener(bartChildEventListener);
+    }
 
     String nombreRaiz;
 
@@ -58,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(Objects.equals(dataSnapshot.getValue(), "Bart")){
+                if (Objects.equals(dataSnapshot.getValue(), "Bart")) {
                     String data = nombre.getText().toString();
                     db.getReference().child("Bart").child("Amigos").child("Milhouse").child("Nombre").setValue("Milhouse");
 
@@ -74,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
 
                     rf = db.getReference().child("Bart").child("Amigos").child("Milhouse").child("Adulto");
                     rf.setValue(adulto.isChecked());
-        //childListener
+
+                    //addListenerforSingleValueEvent(ValueEventListener vListener);
+                    //childListener
 //        ref.addChildEventListener(new ChildEventListener() {
 //            @Override
 //            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -100,10 +131,10 @@ public class MainActivity extends AppCompatActivity {
 //                    rf.setValue(adulto.isChecked());
 
 
-                } else{
+                } else {
                     // El nodo no existe
 
-                    if (nombre.getText().toString().equalsIgnoreCase("Bart")){
+                    if (nombre.getText().toString().equalsIgnoreCase("Bart")) {
 
                         db.getReference().child("Milhouse").child("Nombre").setValue("Milhouse");
 
@@ -134,14 +165,13 @@ public class MainActivity extends AppCompatActivity {
 
                     rf = db.getReference().child(nombre.getText().toString()).child("Hobbies");
 
-                    List<String> hobysList = Arrays.asList(hobbies.getText().toString().split(" "));
-                    rf.setValue(hobysList);
+                    List<String> hobbiesList = Arrays.asList(hobbies.getText().toString().split(","));
+                    rf.setValue(hobbiesList);
 
                     rf = db.getReference().child(nombre.getText().toString()).child("Adulto");
                     rf.setValue(adulto.isChecked());
                 }
             }
-
 
 
             @Override
@@ -174,6 +204,25 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
+    private void insertarMilhouseAmigoOcupa(String nuevoPersonaje) {
+        DatabaseReference nodoPadre = raiz.child(nuevoPersonaje).child("Amigos").child("Milhouse");
+        nodoPadre.child("Nombre").setValue("Milhouse");
+        nodoPadre.child("Apellido").setValue("Van Houten");
+        nodoPadre.child("Edad").setValue(10);
+        nodoPadre.child("Hobbies").setValue(Arrays.asList("Jugar con Bart", "Acosar a Lisa"));
+        nodoPadre.child("EsAdulto").setValue(false);
+
+        // Agregar a Milhouse como amigo del personaje recién insertado jeje
+        DatabaseReference refAmigo = raiz.child("Milhouse").child("Amigos").child(nuevoPersonaje);
+        refAmigo.child("Nombre").setValue(nuevoPersonaje);
+        refAmigo.child("Apellido").setValue("");
+        refAmigo.child("Edad").setValue(0);
+        refAmigo.child("Hobbies").setValue(Arrays.asList());
+        refAmigo.child("EsAdulto").setValue(false);
+
+        Toast.makeText(MainActivity.this, "Milhouse insertado como amigo de " + nuevoPersonaje, Toast.LENGTH_SHORT).show();
+    }
+
     public void insertarAmigo(View view) {
 //        DatabaseReference rf = db.getReference().child("Homer").child("Amigos");
 //        rf.setValue(nombre.getText().toString());
@@ -201,3 +250,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
