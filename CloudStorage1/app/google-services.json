@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "763144858181",
+    "firebase_url": "https://kawasaki2-2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "kawasaki2-2",
+    "storage_bucket": "kawasaki2-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763144858181:android:131e498d17927193ab912c",
+        "android_client_info": {
+          "package_name": "com.example.cloudstorage1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6v2pAvh0QbcRsvY6UGkX47PNxKc9zlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763144858181:android:ebb080a3f6ffe828ab912c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_1_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6v2pAvh0QbcRsvY6UGkX47PNxKc9zlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763144858181:android:869775b56b575896ab912c",
+        "android_client_info": {
+          "package_name": "com.example.firebase_1_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw6v2pAvh0QbcRsvY6UGkX47PNxKc9zlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -108,5 +108,17 @@
         app:layout_constraintStart_toEndOf="@+id/addAmigo"
         app:layout_constraintTop_toBottomOf="@+id/insertar" />
 
+    <Button
+        android:id="@+id/listar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:onClick="listar"
+        android:text="Listar"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/addAmigo"
+        app:layout_constraintTop_toBottomOf="@+id/insertar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

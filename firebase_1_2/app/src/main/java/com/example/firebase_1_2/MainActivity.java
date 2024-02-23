@@ -74,7 +74,38 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
+        //vListener=bartChildEventListener;
         raiz.addChildEventListener(bartChildEventListener);
+
+
+        ValueEventListener vListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String nuevoPersonaje = snapshot.getKey();
+                    if (!nuevoPersonaje.equalsIgnoreCase("Milhouse")) {
+                        insertarMilhouseAmigoOcupa(nuevoPersonaje);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Manejar errores de cancelación
+            }
+        };
+
+        raiz.addListenerForSingleValueEvent(vListener);
+
+
+
+
+
+        //raiz.addListenerForSingleValueEvent(vListener);
+        //que solo se ejecute una vez
+        //addListenerforSingleValueEvent(ValueEventListener vListener);
+
     }
 
     String nombreRaiz;
@@ -104,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
                     rf = db.getReference().child("Bart").child("Amigos").child("Milhouse").child("Adulto");
                     rf.setValue(adulto.isChecked());
 
-                    //addListenerforSingleValueEvent(ValueEventListener vListener);
                     //childListener
 //        ref.addChildEventListener(new ChildEventListener() {
 //            @Override
@@ -248,6 +278,29 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error al eliminar amigo", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void  listar(View view){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    // Aquí puedes acceder a cada nodo
+                    System.out.println(snapshot.getKey());
+                    for (DataSnapshot snapshotHijo : snapshot.getChildren()) {
+                        System.out.print(snapshotHijo.getKey() + " - " + snapshotHijo.getValue());
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Manejar errores
+            }
+        });
+
     }
 }
 
