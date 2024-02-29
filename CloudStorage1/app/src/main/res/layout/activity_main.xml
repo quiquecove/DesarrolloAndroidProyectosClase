@@ -29,12 +29,21 @@
             android:id="@+id/caputurar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="capturar"
             android:text="Tomar Foto" />
 
         <Button
             android:id="@+id/subir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="subir"
             android:text="Guardar" />
+
+        <Button
+            android:id="@+id/aleatoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="seleccionarImagenAleatoria"
+            android:text="Imagen aleatoria" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
